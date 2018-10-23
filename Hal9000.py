@@ -15,7 +15,7 @@ print ("\n" * 64)
 print ("Okay then,",PLR,", how would you like to play a guessing game?")
 print ("\n" * 8)
 NPTC = input("Yes or No> ")
-if NPTC in ["Yes", "yes"]:
+if NPTC in ["Yes", "yes", "Sure", "sure", "Y", "y", "Yeah", "yeah"]:
     print ("\n" * 64)
     print ("Okay, you give a number, then let me guess.")
     print ("\n" * 8)
@@ -45,7 +45,7 @@ if NPTC in ["Yes", "yes"]:
     print ("Would you like to continue playing?")
     print ("\n" * 8)
     NPTC2 = input("Yes or No> ")
-    if NPTC2 == ("Yes") or ("yes") or ("y") or ("Y") or ("Sure") or ("sure"):
+    if NPTC2 in ["Yes", "yes", "Sure", "sure", "Y", "y", "Yeah", "yeah"]:
         HAL = rnd.randint(0,100)
         print ("\n" * 64)
         print ("Now you try and guess my number!")
