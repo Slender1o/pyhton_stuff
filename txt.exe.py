@@ -18,6 +18,38 @@ def delay_print(s):
         sys.stdout.flush()
         time.sleep(0.04)
 
+def raceI(WTR,CLTHSM,CLTHSF,RCE,INTRO):
+    WTR = str(WTR)
+    CLTHSM = str(CLTHSM)
+    CLTHSF = str(CLTHSF)
+    INTRO = str(INTRO)
+    delay_print(INTRO+RCE[2]+" .")
+    if  gender == 'Female':
+        delay_print(" You can't help but feel nauseous while in the "+WTR+" of water.\n")
+        response = input("Would you like to get out?\n")
+        if response == 'Yes':
+            goodResponse = response
+            if  goodResponse == 'Yes':
+                  print("You get out of the water. "+CLOTHSF)
+        if response == 'No':
+            badResponse = response
+            while(badResponse == 'No'):
+                print("You think that you should stay in the water for a little while longer.\n")
+                input("Would you like to get out?\n")
+    if gender == 'Male':
+        delay_print(" You can't help but feel nauseous while in the "+WTR+" of water.\n")
+        response = input("Would you like to get out?\n")
+        if response == 'Yes':
+            goodResponse = response
+            if  goodResponse == 'Yes':
+                  print("You get out of the water. "+CLOTHSM)
+        if response == 'No':
+            badResponse = response
+            askAgain = input("Would you like to get out?\n")
+            if (askAgain == 'Yes'):
+                print("yes")
+    
+
 delay_print ("You are surrounded in darkness. Everything that you see is dark and confusing. ")
 delay_print("A warm light surrounds you and you hear a voice:\n")
 name = input("Who are you, Adventurer?\n")
@@ -36,7 +68,7 @@ gender = input("What is your gender?\n")
 if (gender == 'Female'):
    delay_print("Right. You remember your feminine charms and whims. You are a woman.\n")
 if (gender == 'Male'):
-   delay_print("Right. You remember your manly muscles and all your feats of strength. You are a man.\n\n")
+   delay_print("Right. You remember your manly muscles and all your feats of strength. You are a man.\n")
 
 raceList = [' ', 'Orc', 'Human', 'Elf', 'Dwarf', '']
 
@@ -50,29 +82,7 @@ for i in range(1, 6):
 race = input("What is your race, " + name + ". (Type in a race)\n")
 delay_print("Yes. That's right. You're a(n) " + race + ".")
 time.sleep(5)
+print ("\n" * 64)
 if race == 'Elf':
-    delay_print(" You look around and see that you are in a tent with guards standing outside. They are Elven.")
-    if  gender == 'Female':
-        delay_print(" You can't help but feel nauseous while in the pool of water.\n")
-        response = input("Would you like to get out?\n")
-        if response == 'Yes':
-            goodResponse = response
-            if  goodResponse == 'Yes':
-                  print("You get out of the water. There is a dress, a hair clip and a pair of boots.")
-        if response == 'No':
-            badResponse = response
-            while(badResponse == 'No'):
-                print("You think that you should stay in the water for a little while longer.\n")
-                input("Would you like to get out?\n")
-    if gender == 'Male':
-        delay_print("You can't help but feel nauseous while in the pool of water.\n")
-        response = input("Would you like to get out?\n")
-        if response == 'Yes':
-            goodResponse = response
-            if  goodResponse == 'Yes':
-                  print("You get out of the water. There is a tunic and a pair of boots.")
-        if response == 'No':
-            badResponse = response
-            askAgain = input("Would you like to get out?\n")
-            if (askAgain == 'Yes'):
-                print("yes")
+    raceI("pool","There is a tunic and a pair of boots.","There is a dress, a hair clip and a pair of boots.",
+          ["Elf","elf","Elven","elven"],"You look around and see that you are in a tent with guards standing outside. They are ")
